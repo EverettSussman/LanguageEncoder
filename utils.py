@@ -37,3 +37,12 @@ def cipher(key, char):
     numVal = ord(char) - buf
     numVal = (numVal + key) % 26 + buf
     return chr(numVal)
+
+def gensym():
+    """
+    Generates unique key upon call.
+    """
+    i = 0
+    while True:
+        yield "log_" + str(i)
+        i += 1
